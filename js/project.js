@@ -1,11 +1,13 @@
-const a = {x: 2, y: 3};
-const b = { y: 2, z: 4 };
+var arr = [3, 4, 10, 1000, 2, 7, 40, 0]
 
-const alls = Object.assign({name: "Mango" }, a, b);
-
-const alls2 = {
-    ...a,
-    ...b
+for (var i = 0, numbersi = arr.length - 1; i < numbersi; i++) {
+    for (var j = 0, numbersj = numbersi - i; j < numbersj; j++) {
+        if (arr[j] > arr[j + 1]) {
+            var changes = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = changes;
+        }
+    }
 }
-console.log(alls);
-console.log(alls2);
+
+console.log(arr);
